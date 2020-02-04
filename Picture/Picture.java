@@ -15,7 +15,13 @@ public class Picture
     private Square wall;
     private Square window;
     private Triangle roof;
-    private Circle sun;
+    private myRectangle chimney;
+    private myRectangle garage;
+    private myRectangle garageDoor;
+    private myRectangle grass;
+    private Circle smokeOne;
+    private Circle smokeTwo;
+    private Circle smokeThree;
 
     /**
      * Constructor for objects of class Picture
@@ -34,25 +40,61 @@ public class Picture
         wall.moveVertical(80);
         wall.changeSize(100);
         wall.makeVisible();
+        
+        grass = new myRectangle();
+        grass.changeColor("green");
+        grass.changeSize(300, 400);
+        grass.moveVertical(160);
+        grass.moveHorizontal(-100);
+        grass.makeVisible();
+        
+        garage = new myRectangle();
+        garage.changeSize(80, 100);
+        garage.moveVertical(100);
+        garage.moveHorizontal(100);
+        garage.makeVisible();
 
+        garageDoor = new myRectangle();
+        garageDoor.changeSize(60, 80);
+        garageDoor.moveVertical(110);
+        garageDoor.moveHorizontal(110);
+        garageDoor.changeColor("black");
+        garageDoor.makeVisible();
+        
         window = new Square();
         window.changeColor("black");
-        window.moveHorizontal(20);
         window.moveVertical(100);
+        window.moveHorizontal(20);
         window.makeVisible();
 
+        chimney = new myRectangle();
+        chimney.moveVertical(30);
+        chimney.moveHorizontal(10);
+        chimney.changeSize(50, 30);
+        chimney.changeColor("yellow");
+        chimney.makeVisible();
+        
         roof = new Triangle();
         roof.changeSize(50, 140);
+        roof.changeColor("black");
         roof.moveHorizontal(60);
         roof.moveVertical(70);
         roof.makeVisible();
 
-        sun = new Circle();
-        sun.changeColor("yellow");
-        sun.moveHorizontal(180);
-        sun.moveVertical(-10);
-        sun.changeSize(60);
-        sun.makeVisible();
+        smokeOne = new Circle();
+        smokeOne.moveVertical(-10);
+        smokeOne.moveHorizontal(40);
+        smokeOne.makeVisible();
+        
+        smokeTwo = new Circle();
+        smokeTwo.moveVertical(-30);
+        smokeTwo.moveHorizontal(10);
+        smokeTwo.makeVisible();
+        
+        smokeThree = new Circle();
+        smokeThree.moveVertical(-50);
+        smokeThree.moveHorizontal(-20);
+        smokeThree.makeVisible();
     }
 
     /**
@@ -65,7 +107,13 @@ public class Picture
             wall.changeColor("black");
             window.changeColor("white");
             roof.changeColor("black");
-            sun.changeColor("black");
+            chimney.changeColor("black");
+            garage.changeColor("white");
+            garageDoor.changeColor("black");
+            grass.changeColor("white");
+            smokeOne.changeColor("black");
+            smokeTwo.changeColor("black");
+            smokeTwo.changeColor("black");
         }
     }
 
@@ -78,8 +126,14 @@ public class Picture
         {
             wall.changeColor("red");
             window.changeColor("black");
-            roof.changeColor("green");
-            sun.changeColor("yellow");
+            roof.changeColor("black");
+            chimney.changeColor("yellow");
+            garage.changeColor("green");
+            garageDoor.changeColor("black");
+            grass.changeColor("green");
+            smokeOne.changeColor("blue");
+            smokeTwo.changeColor("blue");
+            smokeThree.changeColor("blue");
         }
     }
 
